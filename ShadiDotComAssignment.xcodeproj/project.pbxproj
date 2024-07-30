@@ -1,0 +1,417 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E60CABA12C576EF000F34839 /* ShadiDotComAssignmentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60CABA02C576EF000F34839 /* ShadiDotComAssignmentApp.swift */; };
+		E60CABA32C576EF000F34839 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60CABA22C576EF000F34839 /* ContentView.swift */; };
+		E60CABA52C576EF200F34839 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E60CABA42C576EF200F34839 /* Assets.xcassets */; };
+		E60CABA82C576EF200F34839 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E60CABA72C576EF200F34839 /* Preview Assets.xcassets */; };
+		E60CABAA2C576EF200F34839 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60CABA92C576EF200F34839 /* Persistence.swift */; };
+		E60CABB42C5789A800F34839 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60CABB32C5789A800F34839 /* User.swift */; };
+		E60CABB62C578AA300F34839 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60CABB52C578AA300F34839 /* UserViewModel.swift */; };
+		E60CABB82C578AE700F34839 /* MatchCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60CABB72C578AE700F34839 /* MatchCardView.swift */; };
+		E60CABBB2C578BE000F34839 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = E60CABBA2C578BE000F34839 /* SDWebImageSwiftUI */; };
+		E6E6697C2C59825D00CBE25C /* Shadi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E6E6697A2C59825D00CBE25C /* Shadi.xcdatamodeld */; };
+		E6E6697F2C59832500CBE25C /* Entity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E6697D2C59832500CBE25C /* Entity+CoreDataClass.swift */; };
+		E6E669802C59832500CBE25C /* Entity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E6697E2C59832500CBE25C /* Entity+CoreDataProperties.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E60CAB9D2C576EF000F34839 /* ShadiDotComAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShadiDotComAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E60CABA02C576EF000F34839 /* ShadiDotComAssignmentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadiDotComAssignmentApp.swift; sourceTree = "<group>"; };
+		E60CABA22C576EF000F34839 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E60CABA42C576EF200F34839 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E60CABA72C576EF200F34839 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E60CABA92C576EF200F34839 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		E60CABB32C5789A800F34839 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E60CABB52C578AA300F34839 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		E60CABB72C578AE700F34839 /* MatchCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCardView.swift; sourceTree = "<group>"; };
+		E6E6697B2C59825D00CBE25C /* Shadi.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shadi.xcdatamodel; sourceTree = "<group>"; };
+		E6E6697D2C59832500CBE25C /* Entity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E6E6697E2C59832500CBE25C /* Entity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E60CAB9A2C576EF000F34839 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E60CABBB2C578BE000F34839 /* SDWebImageSwiftUI in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E60CAB942C576EF000F34839 = {
+			isa = PBXGroup;
+			children = (
+				E6E6697D2C59832500CBE25C /* Entity+CoreDataClass.swift */,
+				E6E6697E2C59832500CBE25C /* Entity+CoreDataProperties.swift */,
+				E60CAB9F2C576EF000F34839 /* ShadiDotComAssignment */,
+				E60CAB9E2C576EF000F34839 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E60CAB9E2C576EF000F34839 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E60CAB9D2C576EF000F34839 /* ShadiDotComAssignment.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E60CAB9F2C576EF000F34839 /* ShadiDotComAssignment */ = {
+			isa = PBXGroup;
+			children = (
+				E60CABA02C576EF000F34839 /* ShadiDotComAssignmentApp.swift */,
+				E60CABB32C5789A800F34839 /* User.swift */,
+				E60CABB52C578AA300F34839 /* UserViewModel.swift */,
+				E60CABA22C576EF000F34839 /* ContentView.swift */,
+				E60CABB72C578AE700F34839 /* MatchCardView.swift */,
+				E60CABA92C576EF200F34839 /* Persistence.swift */,
+				E60CABA42C576EF200F34839 /* Assets.xcassets */,
+				E60CABA62C576EF200F34839 /* Preview Content */,
+				E6E6697A2C59825D00CBE25C /* Shadi.xcdatamodeld */,
+			);
+			path = ShadiDotComAssignment;
+			sourceTree = "<group>";
+		};
+		E60CABA62C576EF200F34839 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				E60CABA72C576EF200F34839 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E60CAB9C2C576EF000F34839 /* ShadiDotComAssignment */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E60CABB02C576EF200F34839 /* Build configuration list for PBXNativeTarget "ShadiDotComAssignment" */;
+			buildPhases = (
+				E60CAB992C576EF000F34839 /* Sources */,
+				E60CAB9A2C576EF000F34839 /* Frameworks */,
+				E60CAB9B2C576EF000F34839 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShadiDotComAssignment;
+			packageProductDependencies = (
+				E60CABBA2C578BE000F34839 /* SDWebImageSwiftUI */,
+			);
+			productName = ShadiDotComAssignment;
+			productReference = E60CAB9D2C576EF000F34839 /* ShadiDotComAssignment.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E60CAB952C576EF000F34839 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1510;
+				LastUpgradeCheck = 1510;
+				TargetAttributes = {
+					E60CAB9C2C576EF000F34839 = {
+						CreatedOnToolsVersion = 15.1;
+					};
+				};
+			};
+			buildConfigurationList = E60CAB982C576EF000F34839 /* Build configuration list for PBXProject "ShadiDotComAssignment" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E60CAB942C576EF000F34839;
+			packageReferences = (
+				E60CABB92C578BE000F34839 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
+			productRefGroup = E60CAB9E2C576EF000F34839 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E60CAB9C2C576EF000F34839 /* ShadiDotComAssignment */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E60CAB9B2C576EF000F34839 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E60CABA82C576EF200F34839 /* Preview Assets.xcassets in Resources */,
+				E60CABA52C576EF200F34839 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E60CAB992C576EF000F34839 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E60CABAA2C576EF200F34839 /* Persistence.swift in Sources */,
+				E60CABB62C578AA300F34839 /* UserViewModel.swift in Sources */,
+				E60CABB82C578AE700F34839 /* MatchCardView.swift in Sources */,
+				E6E669802C59832500CBE25C /* Entity+CoreDataProperties.swift in Sources */,
+				E60CABA32C576EF000F34839 /* ContentView.swift in Sources */,
+				E6E6697C2C59825D00CBE25C /* Shadi.xcdatamodeld in Sources */,
+				E60CABB42C5789A800F34839 /* User.swift in Sources */,
+				E6E6697F2C59832500CBE25C /* Entity+CoreDataClass.swift in Sources */,
+				E60CABA12C576EF000F34839 /* ShadiDotComAssignmentApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		E60CABAE2C576EF200F34839 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E60CABAF2C576EF200F34839 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E60CABB12C576EF200F34839 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ShadiDotComAssignment/Preview Content\"";
+				DEVELOPMENT_TEAM = 94LW7W8CH8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = anubhav.singh.com.ShadiDotComAssignment;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E60CABB22C576EF200F34839 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ShadiDotComAssignment/Preview Content\"";
+				DEVELOPMENT_TEAM = 94LW7W8CH8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = anubhav.singh.com.ShadiDotComAssignment;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E60CAB982C576EF000F34839 /* Build configuration list for PBXProject "ShadiDotComAssignment" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E60CABAE2C576EF200F34839 /* Debug */,
+				E60CABAF2C576EF200F34839 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E60CABB02C576EF200F34839 /* Build configuration list for PBXNativeTarget "ShadiDotComAssignment" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E60CABB12C576EF200F34839 /* Debug */,
+				E60CABB22C576EF200F34839 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E60CABB92C578BE000F34839 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E60CABBA2C578BE000F34839 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E60CABB92C578BE000F34839 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		E6E6697A2C59825D00CBE25C /* Shadi.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E6E6697B2C59825D00CBE25C /* Shadi.xcdatamodel */,
+			);
+			currentVersion = E6E6697B2C59825D00CBE25C /* Shadi.xcdatamodel */;
+			path = Shadi.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = E60CAB952C576EF000F34839 /* Project object */;
+}
