@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import Combine
 
 class UserViewModel: ObservableObject {
     @Published var users: [User] = []
@@ -14,7 +15,7 @@ class UserViewModel: ObservableObject {
     @Published var rejectedUsers: [User] = []
     private var cancellables = Set<AnyCancellable>()
     private let persistenceController = PersistenceController.shared
-    private let serverURL = "https://yourserver.com/api/syncUsers" // Replace with your server's URL
+    private let serverURL = "https://yourserver.com/api/syncUsers"
 
     init() {
         fetchUsers()
@@ -116,7 +117,7 @@ class UserViewModel: ObservableObject {
 
     func syncData() {
         let context = persistenceController.container.viewContext
-        let fetchRequest: NSFetchRequest<UserEntity> = Entity.fetchRequest()
+        let fetchRequest: NSFetchRequest<Entity> = Entity.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "status != %@", "")
 
         do {

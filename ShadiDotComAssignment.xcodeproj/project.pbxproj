@@ -51,8 +51,6 @@
 		E60CAB942C576EF000F34839 = {
 			isa = PBXGroup;
 			children = (
-				E6E6697D2C59832500CBE25C /* Entity+CoreDataClass.swift */,
-				E6E6697E2C59832500CBE25C /* Entity+CoreDataProperties.swift */,
 				E60CAB9F2C576EF000F34839 /* ShadiDotComAssignment */,
 				E60CAB9E2C576EF000F34839 /* Products */,
 			);
@@ -70,11 +68,9 @@
 			isa = PBXGroup;
 			children = (
 				E60CABA02C576EF000F34839 /* ShadiDotComAssignmentApp.swift */,
-				E60CABB32C5789A800F34839 /* User.swift */,
-				E60CABB52C578AA300F34839 /* UserViewModel.swift */,
-				E60CABA22C576EF000F34839 /* ContentView.swift */,
-				E60CABB72C578AE700F34839 /* MatchCardView.swift */,
-				E60CABA92C576EF200F34839 /* Persistence.swift */,
+				E65C1C232C599031000F3DBE /* Model */,
+				E65C1C252C59905A000F3DBE /* View */,
+				E65C1C262C599078000F3DBE /* ViewModel */,
 				E60CABA42C576EF200F34839 /* Assets.xcassets */,
 				E60CABA62C576EF200F34839 /* Preview Content */,
 				E6E6697A2C59825D00CBE25C /* Shadi.xcdatamodeld */,
@@ -88,6 +84,34 @@
 				E60CABA72C576EF200F34839 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E65C1C232C599031000F3DBE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E6E6697D2C59832500CBE25C /* Entity+CoreDataClass.swift */,
+				E6E6697E2C59832500CBE25C /* Entity+CoreDataProperties.swift */,
+				E60CABA92C576EF200F34839 /* Persistence.swift */,
+				E60CABB32C5789A800F34839 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E65C1C252C59905A000F3DBE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E60CABB72C578AE700F34839 /* MatchCardView.swift */,
+				E60CABA22C576EF000F34839 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E65C1C262C599078000F3DBE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E60CABB52C578AA300F34839 /* UserViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
