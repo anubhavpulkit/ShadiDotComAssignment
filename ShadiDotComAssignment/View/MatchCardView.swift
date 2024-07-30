@@ -15,6 +15,24 @@ struct MatchCardView: View {
     var body: some View {
         VStack {
             if let status = user.status {
+                if let urlString = user.picture.large,
+                   let url = URL(string: urlString) {
+                    WebImage(url: url)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 100, height: 100)
+                        .clipShape(Circle())
+                }
+                Text("\(user.name.first) \(user.name.last)")
+                    .font(.title)
+                Text(user.email)
+                    .font(.subheadline)
+                HStack{
+                    Text(user.gender)
+                        .font(.subheadline)
+                    Text("\(user.dob.age)")
+                        .font(.subheadline)
+                }
                 Text(status)
                     .font(.headline)
                     .padding()
@@ -34,7 +52,14 @@ struct MatchCardView: View {
                     .font(.title)
                 Text(user.email)
                     .font(.subheadline)
-                HStack {
+                HStack{
+                    Text(user.gender)
+                        .font(.subheadline)
+                    Text("\(user.dob.age)")
+                        .font(.subheadline)
+                }
+                
+                HStack(spacing: 20) {
                     Button(action: {
                         viewModel.acceptUser(user)
                     }) {
@@ -44,6 +69,7 @@ struct MatchCardView: View {
                             .background(Color.green)
                             .cornerRadius(8)
                     }
+                    
                     Button(action: {
                         viewModel.declineUser(user)
                     }) {
