@@ -8,8 +8,8 @@
 
 import Foundation
 import CoreData
-
-@objc(Entity)
-public class Entity: NSManagedObject {
-
-}
+//
+//@objc(UserEntity)
+//public class UserEntity: NSManagedObject {
+//
+//}

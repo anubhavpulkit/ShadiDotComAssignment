@@ -9,18 +9,18 @@
 import Foundation
 import CoreData
 
-
-extension Entity {
-
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Entity> {
-        return NSFetchRequest<Entity>(entityName: "Entity")
-    }
-
-    @NSManaged public var id: String?
-    @NSManaged public var status: String?
-
-}
-
-extension Entity : Identifiable {
-
-}
+//
+//extension UserEntity {
+//
+//    @nonobjc public class func fetchRequest() -> NSFetchRequest<UserEntity> {
+//        return NSFetchRequest<UserEntity>(entityName: "UserEntity")
+//    }
+//
+//    @NSManaged public var id: String?
+//    @NSManaged public var status: String?
+//
+//}
+//
+//extension UserEntity : Identifiable {
+//
+//}

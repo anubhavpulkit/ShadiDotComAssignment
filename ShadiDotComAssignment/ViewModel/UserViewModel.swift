@@ -48,7 +48,7 @@ class UserViewModel: ObservableObject {
 
     func loadStoredUsers() {
         let context = persistenceController.container.viewContext
-        let fetchRequest: NSFetchRequest<Entity> = Entity.fetchRequest()
+        let fetchRequest: NSFetchRequest<UserEntity> = UserEntity.fetchRequest()
 
         do {
             let results = try context.fetch(fetchRequest)
@@ -64,7 +64,7 @@ class UserViewModel: ObservableObject {
     private func saveUsersToLocalDatabase(_ users: [User]) {
         let context = persistenceController.container.viewContext
         users.forEach { user in
-            let userEntity = Entity(context: context)
+            let userEntity = UserEntity(context: context)
             userEntity.id = user.id
             userEntity.status = user.status ?? ""
         }
@@ -86,16 +86,16 @@ class UserViewModel: ObservableObject {
 
     private func updateStatus(for user: User, with status: String) {
         let context = persistenceController.container.viewContext
-        let fetchRequest: NSFetchRequest<Entity> = Entity.fetchRequest()
+        let fetchRequest: NSFetchRequest<UserEntity> = UserEntity.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id == %@", user.id)
 
         do {
             let results = try context.fetch(fetchRequest)
-            let userEntity: Entity
+            let userEntity: UserEntity
             if let existingUser = results.first {
                 userEntity = existingUser
             } else {
-                userEntity = Entity(context: context)
+                userEntity = UserEntity(context: context)
                 userEntity.id = user.id
             }
             userEntity.status = status
@@ -117,7 +117,7 @@ class UserViewModel: ObservableObject {
 
     func syncData() {
         let context = persistenceController.container.viewContext
-        let fetchRequest: NSFetchRequest<Entity> = Entity.fetchRequest()
+        let fetchRequest: NSFetchRequest<UserEntity> = UserEntity.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "status != %@", "")
 
         do {
@@ -172,7 +172,7 @@ class UserViewModel: ObservableObject {
         }
     }
 
-    private func markUsersAsSynced(_ users: [Entity]) {
+    private func markUsersAsSynced(_ users: [UserEntity]) {
         let context = persistenceController.container.viewContext
 
         users.forEach { userEntity in

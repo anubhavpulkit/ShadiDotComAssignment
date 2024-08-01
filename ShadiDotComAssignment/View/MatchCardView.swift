@@ -1,90 +1,52 @@
-////
-////  MatchCardView.swift
-////  ShadiDotComAssignment
-////
-////  Created by Anubhav Singh on 29/07/24.
-////
-
 import SwiftUI
 import SDWebImageSwiftUI
 
 struct MatchCardView: View {
     @ObservedObject var viewModel: UserViewModel
     var user: User
-
+    
     var body: some View {
         VStack {
-            if let status = user.status {
-                if let urlString = user.picture.large,
-                   let url = URL(string: urlString) {
-                    WebImage(url: url)
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 100, height: 100)
-                        .clipShape(Circle())
-                }
-                Text("\(user.name.first) \(user.name.last)")
-                    .font(.title)
-                Text(user.email)
-                    .font(.subheadline)
-                HStack{
-                    Text(user.gender)
-                        .font(.subheadline)
-                    Text("\(user.dob.age)")
-                        .font(.subheadline)
-                }
-                Text(status)
+            ProfilePicture(urlString: user.picture.large)
+            Text("\(user.name.first) \(user.name.last)")
+                .font(.title)
+                .fontWeight(.bold)
+            Text(user.location.city)
+                .font(.subheadline)
+                .foregroundColor(.white)
+            
+            if user.status != nil {
+                Text(user.status ?? "")
                     .font(.headline)
-                    .padding()
-                    .background(Color.gray)
+                    .padding(.vertical, 8)
+                    .padding(.horizontal, 16)
+                    .background(Color.blue.opacity(0.7))
                     .cornerRadius(8)
                     .foregroundColor(.white)
             } else {
-                if let urlString = user.picture.large,
-                   let url = URL(string: urlString) {
-                    WebImage(url: url)
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 100, height: 100)
-                        .clipShape(Circle())
-                }
-                Text("\(user.name.first) \(user.name.last)")
-                    .font(.title)
-                Text(user.email)
-                    .font(.subheadline)
-                HStack{
-                    Text(user.gender)
-                        .font(.subheadline)
-                    Text("\(user.dob.age)")
-                        .font(.subheadline)
-                }
+                Text("\(user.gender), Age: \(user.dob.age)")
+                    .font(.title2)
+                    .padding(.bottom, 10)
                 
-                HStack(spacing: 20) {
-                    Button(action: {
+                HStack(spacing: 30) {
+                    ActionButton(title: "Accept", color: .green) {
                         viewModel.acceptUser(user)
-                    }) {
-                        Text("Accept")
-                            .foregroundColor(.white)
-                            .padding()
-                            .background(Color.green)
-                            .cornerRadius(8)
                     }
+                    .frame(width: 100, height: 40)
                     
-                    Button(action: {
-                        viewModel.declineUser(user)
-                    }) {
-                        Text("Decline")
-                            .foregroundColor(.white)
-                            .padding()
-                            .background(Color.red)
-                            .cornerRadius(8)
+                    ActionButton(title: "Reject", color: .red) {
+//                        viewModel.declineUser(user)
                     }
+                    .frame(width: 100, height: 40)
                 }
+                .padding(.top, 10)
             }
         }
         .padding()
-        .background(Color.white)
-        .cornerRadius(10)
-        .shadow(radius: 5)
+        .frame(width: UIScreen.main.bounds.width * 0.75, height: 450)
+        .background(LinearGradient(gradient: Gradient(colors: [Color.white, Color.gray.opacity(0.2)]), startPoint: .top, endPoint: .bottom))
+        .cornerRadius(20)
+        .shadow(radius: 10)
+        .padding()
     }
 }

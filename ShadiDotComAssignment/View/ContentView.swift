@@ -1,26 +1,15 @@
-////
-////  ContentView.swift
-////  ShadiDotComAssignment
-////
-////  Created by Anubhav Singh on 29/07/24.
-////
-
 import SwiftUI
 import SDWebImageSwiftUI
 
+// Main view of the app
 struct ContentView: View {
     @StateObject private var viewModel = UserViewModel()
 
     var body: some View {
         TabView {
             NavigationView {
-                List(viewModel.users) { user in
-                    MatchCardView(viewModel: viewModel, user: user)
-                }
-                .onAppear {
-                    viewModel.fetchUsers()
-                }
-                .navigationTitle("All Users")
+                UserListView(viewModel: viewModel)
+                    .navigationTitle("All Users")
             }
             .tabItem {
                 Image(systemName: "person.3.fill")
@@ -28,10 +17,8 @@ struct ContentView: View {
             }
 
             NavigationView {
-                List(viewModel.acceptedUsers) { user in
-                    UserRowView(user: user)
-                }
-                .navigationTitle("Accepted Users")
+                UserListView(viewModel: viewModel, isAccepted: true)
+                    .navigationTitle("Accepted Users")
             }
             .tabItem {
                 Image(systemName: "checkmark.circle.fill")
@@ -39,10 +26,8 @@ struct ContentView: View {
             }
 
             NavigationView {
-                List(viewModel.rejectedUsers) { user in
-                    UserRowView(user: user)
-                }
-                .navigationTitle("Rejected Users")
+                UserListView(viewModel: viewModel, isAccepted: false)
+                    .navigationTitle("Rejected Users")
             }
             .tabItem {
                 Image(systemName: "xmark.circle.fill")
@@ -50,30 +35,75 @@ struct ContentView: View {
             }
         }
         .onAppear {
-            viewModel.loadStoredUsers()
+            viewModel.fetchUsers()
         }
     }
 }
 
-struct UserRowView: View {
-    var user: User
+// View for displaying a list of users
+struct UserListView: View {
+    @ObservedObject var viewModel: UserViewModel
+    var isAccepted: Bool? = nil
 
     var body: some View {
-        HStack {
-            if let urlString = user.picture.thumbnail,
-               let url = URL(string: urlString) {
-                WebImage(url: url)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 50, height: 50)
-                    .clipShape(Circle())
-            }
-            VStack(alignment: .leading) {
-                Text("\(user.name.first) \(user.name.last)")
-                    .font(.headline)
-                Text(user.email)
-                    .font(.subheadline)
-            }
+        List(users) { user in
+            MatchCardView(viewModel: viewModel, user: user)
         }
+    }
+
+    private var users: [User] {
+        if let isAccepted = isAccepted {
+            return isAccepted ? viewModel.acceptedUsers : viewModel.rejectedUsers
+        } else {
+            return viewModel.users
+        }
+    }
+}
+
+// View for displaying a user's profile card
+
+
+// Component for displaying profile pictures
+struct ProfilePicture: View {
+    let urlString: String?
+    
+    var body: some View {
+        if let urlString = urlString, let url = URL(string: urlString) {
+            WebImage(url: url)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 100, height: 100)
+                .clipShape(Circle())
+                .shadow(radius: 5)
+        } else {
+            Image(systemName: "person.fill")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 100, height: 100)
+                .clipShape(Circle())
+                .foregroundColor(.gray)
+                .shadow(radius: 5)
+        }
+    }
+}
+
+// Custom button component
+struct ActionButton: View {
+    let title: String
+    let color: Color
+    let action: () -> Void
+    
+    var body: some View {
+        Button(action: {
+            action()
+        }) {
+            Text(title)
+                .font(.headline)
+                .foregroundColor(.white)
+                .padding(.vertical, 12)
+                .padding(.horizontal, 20)
+                .background(color)
+                .cornerRadius(10)
+        }.frame(width: 100, height: 40)
     }
 }

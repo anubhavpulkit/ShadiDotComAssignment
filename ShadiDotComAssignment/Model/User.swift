@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData // Import Core Data for Core Data related functionality
 
 struct UserResponse: Decodable {
     let results: [User]
@@ -36,7 +37,8 @@ struct User: Decodable, Identifiable {
     // Custom initializer to handle optional types or special cases
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.id = try container.decode(String.self, forKey: .idInfo)
+        let idInfoContainer = try container.nestedContainer(keyedBy: IDInfo.CodingKeys.self, forKey: .idInfo)
+        self.id = try idInfoContainer.decodeIfPresent(String.self, forKey: .value) ?? UUID().uuidString
         self.gender = try container.decode(String.self, forKey: .gender)
         self.name = try container.decode(Name.self, forKey: .name)
         self.location = try container.decode(Location.self, forKey: .location)
@@ -49,10 +51,39 @@ struct User: Decodable, Identifiable {
         self.idInfo = try container.decode(IDInfo.self, forKey: .idInfo)
         self.picture = try container.decode(Picture.self, forKey: .picture)
         self.nat = try container.decode(String.self, forKey: .nat)
-        self.status = nil // Or handle status if it is present in the JSON
+        self.status = nil // Default status to nil
     }
 }
 
+// Extension to initialize User from UserEntity (Core Data)
+extension User {
+    init(from entity: UserEntity) {
+        self.id = entity.id ?? UUID().uuidString
+        self.gender = "" // Set default or optional, as Core Data doesn't have this data
+        self.name = Name(title: "", first: "", last: "")
+        self.location = Location(
+            street: Street(number: 0, name: ""),
+            city: "",
+            state: "",
+            country: "",
+            postcode: .string(""),
+            coordinates: Coordinates(latitude: "", longitude: ""),
+            timezone: Timezone(offset: "", description: "")
+        )
+        self.email = "" // Default or optional
+        self.login = Login(uuid: "", username: "", password: "", salt: "", md5: "", sha1: "", sha256: "")
+        self.dob = DateOfBirth(date: "", age: 0)
+        self.registered = Registered(date: "", age: 0)
+        self.phone = "" // Default or optional
+        self.cell = "" // Default or optional
+        self.idInfo = IDInfo(name: "", value: nil)
+        self.picture = Picture(large: nil, medium: "", thumbnail: nil)
+        self.nat = "" // Default or optional
+        self.status = entity.status
+    }
+}
+
+// Decodable supporting types
 struct Name: Decodable {
     let title: String
     let first: String
@@ -123,6 +154,10 @@ struct Registered: Decodable {
 struct IDInfo: Decodable {
     let name: String
     let value: String?
+
+    enum CodingKeys: String, CodingKey {
+        case name, value
+    }
 }
 
 struct Picture: Decodable {
