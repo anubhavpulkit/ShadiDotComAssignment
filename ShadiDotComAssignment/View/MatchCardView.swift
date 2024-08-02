@@ -12,24 +12,30 @@ struct MatchCardView: View {
             Text("\(user.name.first) \(user.name.last)")
                 .font(.title)
                 .fontWeight(.bold)
+                .foregroundColor(.primary)
             Text("\(user.location.city) \(user.location.state)")
                 .font(.subheadline)
-                .foregroundColor(.white)
+                .foregroundColor(.secondary)
             
             Text("\(user.gender), Age: \(user.dob.age)")
-                .font(.title2)
+                .font(.title3)
                 .padding(.bottom, 10)
-            
+                .foregroundColor(.primary)
+
             if user.status != nil {
                if  isAccepted {
                    Text(user.phone)
                        .font(.title2)
+                       .foregroundColor(.green)
+                   Text(user.email)
+                       .font(.subheadline)
+                       .foregroundColor(.secondary)
                 }
                 Text(user.status ?? "")
                     .font(.headline)
                     .padding(.vertical, 8)
                     .padding(.horizontal, 16)
-                    .background(Color.blue.opacity(0.7))
+                    .background(Color.blue.opacity(0.8))
                     .cornerRadius(8)
                     .foregroundColor(.white)
             } else {

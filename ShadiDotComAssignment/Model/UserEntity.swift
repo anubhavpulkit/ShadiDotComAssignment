@@ -24,6 +24,7 @@ extension UserEntity {
     @NSManaged public var nameFirst: String?
     @NSManaged public var dobAge: Int16
     @NSManaged public var phoneNum: String
+    @NSManaged public var emailIs: String
 }
 
 extension UserEntity: Identifiable {

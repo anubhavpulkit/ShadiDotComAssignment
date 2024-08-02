@@ -18,7 +18,7 @@ struct User: Decodable, Identifiable {
     let gender: String
     let name: Name
     let location: Location
-    let email: String
+    var email: String
     let login: Login
     let dob: DateOfBirth
     let registered: Registered
@@ -28,10 +28,11 @@ struct User: Decodable, Identifiable {
     let picture: Picture
     let nat: String
     var status: String?
-    var pictureLarge: String? // New field
-    var nameFirst: String?    // New field
-    var dobAge: Int16?        // New field
-    var phoneNum: String? // New field
+    var pictureLarge: String?
+    var nameFirst: String?
+    var dobAge: Int16?
+    var phoneNum: String?
+    var emailIs: String?
 
     enum CodingKeys: String, CodingKey {
         case gender, name, location, email, login, dob, registered, phone, cell, picture, nat, status
@@ -62,6 +63,7 @@ struct User: Decodable, Identifiable {
         self.nameFirst = nil
         self.dobAge = nil
         self.phoneNum = nil
+        self.emailIs = nil
     }
 }
 
@@ -96,6 +98,7 @@ extension User {
         self.nameFirst = entity.nameFirst
         self.dobAge = entity.dobAge
         self.phone = entity.phoneNum
+        self.email = entity.emailIs
     }
 }
 

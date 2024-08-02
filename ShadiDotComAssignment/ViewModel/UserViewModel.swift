@@ -104,6 +104,7 @@ class UserViewModel: ObservableObject {
             userEntity.pictureLarge = user.picture.large
             userEntity.dobAge = Int16(user.dob.age)
             userEntity.phoneNum = user.phone
+            userEntity.emailIs = user.email
 
             try context.save()
 
