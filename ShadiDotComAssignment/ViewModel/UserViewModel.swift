@@ -99,6 +99,11 @@ class UserViewModel: ObservableObject {
                 userEntity.id = user.id
             }
             userEntity.status = status
+            userEntity.nameFirst = user.name.first
+            userEntity.gender = user.gender
+            userEntity.pictureLarge = user.picture.large
+            userEntity.dobAge = Int16(user.dob.age)
+            userEntity.phoneNum = user.phone
 
             try context.save()
 

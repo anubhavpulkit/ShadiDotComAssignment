@@ -47,7 +47,7 @@ struct UserListView: View {
 
     var body: some View {
         List(users) { user in
-            MatchCardView(viewModel: viewModel, user: user)
+            MatchCardView(viewModel: viewModel, user: user, isAccepted: isAccepted ?? false)
         }
     }
 
@@ -105,5 +105,6 @@ struct ActionButton: View {
                 .background(color)
                 .cornerRadius(10)
         }.frame(width: 100, height: 40)
+            .buttonStyle(PlainButtonStyle())
     }
 }

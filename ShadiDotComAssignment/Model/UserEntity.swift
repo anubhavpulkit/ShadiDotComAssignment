@@ -9,8 +9,6 @@ import Foundation
 import CoreData
 
 public class UserEntity: NSManagedObject {
-//    @NSManaged public var id: String?
-//    @NSManaged public var status: String?
 }
 
 extension UserEntity {
@@ -21,9 +19,12 @@ extension UserEntity {
 
     @NSManaged public var id: String?
     @NSManaged public var status: String?
-
+    @NSManaged public var pictureLarge: String?
+    @NSManaged public var gender: String?
+    @NSManaged public var nameFirst: String?
+    @NSManaged public var dobAge: Int16
+    @NSManaged public var phoneNum: String
 }
 
-extension UserEntity : Identifiable {
-
+extension UserEntity: Identifiable {
 }

@@ -18,8 +18,6 @@
 		E60CABBB2C578BE000F34839 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = E60CABBA2C578BE000F34839 /* SDWebImageSwiftUI */; };
 		E68FDAE92C5B69B40078CEF1 /* UserEntity.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E68FDAE72C5B69B40078CEF1 /* UserEntity.xcdatamodeld */; };
 		E68FDAEB2C5B6D000078CEF1 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68FDAEA2C5B6D000078CEF1 /* UserEntity.swift */; };
-		E6E6697F2C59832500CBE25C /* Entity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E6697D2C59832500CBE25C /* Entity+CoreDataClass.swift */; };
-		E6E669802C59832500CBE25C /* Entity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E6697E2C59832500CBE25C /* Entity+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,8 +32,6 @@
 		E60CABB72C578AE700F34839 /* MatchCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCardView.swift; sourceTree = "<group>"; };
 		E68FDAE82C5B69B40078CEF1 /* ShadiDotComAssignmentApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShadiDotComAssignmentApp.xcdatamodel; sourceTree = "<group>"; };
 		E68FDAEA2C5B6D000078CEF1 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
-		E6E6697D2C59832500CBE25C /* Entity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		E6E6697E2C59832500CBE25C /* Entity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,8 +87,6 @@
 		E65C1C232C599031000F3DBE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E6E6697D2C59832500CBE25C /* Entity+CoreDataClass.swift */,
-				E6E6697E2C59832500CBE25C /* Entity+CoreDataProperties.swift */,
 				E60CABA92C576EF200F34839 /* Persistence.swift */,
 				E60CABB32C5789A800F34839 /* User.swift */,
 				E68FDAEA2C5B6D000078CEF1 /* UserEntity.swift */,
@@ -197,10 +191,8 @@
 				E60CABB62C578AA300F34839 /* UserViewModel.swift in Sources */,
 				E60CABB82C578AE700F34839 /* MatchCardView.swift in Sources */,
 				E68FDAEB2C5B6D000078CEF1 /* UserEntity.swift in Sources */,
-				E6E669802C59832500CBE25C /* Entity+CoreDataProperties.swift in Sources */,
 				E60CABA32C576EF000F34839 /* ContentView.swift in Sources */,
 				E60CABB42C5789A800F34839 /* User.swift in Sources */,
-				E6E6697F2C59832500CBE25C /* Entity+CoreDataClass.swift in Sources */,
 				E68FDAE92C5B69B40078CEF1 /* UserEntity.xcdatamodeld in Sources */,
 				E60CABA12C576EF000F34839 /* ShadiDotComAssignmentApp.swift in Sources */,
 			);

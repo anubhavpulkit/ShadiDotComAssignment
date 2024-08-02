@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import CoreData // Import Core Data for Core Data related functionality
+import CoreData
 
 struct UserResponse: Decodable {
     let results: [User]
@@ -22,15 +22,19 @@ struct User: Decodable, Identifiable {
     let login: Login
     let dob: DateOfBirth
     let registered: Registered
-    let phone: String
+    var phone: String
     let cell: String
     let idInfo: IDInfo
     let picture: Picture
     let nat: String
     var status: String?
+    var pictureLarge: String? // New field
+    var nameFirst: String?    // New field
+    var dobAge: Int16?        // New field
+    var phoneNum: String? // New field
 
     enum CodingKeys: String, CodingKey {
-        case gender, name, location, email, login, dob, registered, phone, cell, picture, nat
+        case gender, name, location, email, login, dob, registered, phone, cell, picture, nat, status
         case idInfo = "id"
     }
 
@@ -51,7 +55,13 @@ struct User: Decodable, Identifiable {
         self.idInfo = try container.decode(IDInfo.self, forKey: .idInfo)
         self.picture = try container.decode(Picture.self, forKey: .picture)
         self.nat = try container.decode(String.self, forKey: .nat)
-        self.status = nil // Default status to nil
+        self.status = try container.decodeIfPresent(String.self, forKey: .status)
+        
+        // No coding keys for these; set as nil by default
+        self.pictureLarge = nil
+        self.nameFirst = nil
+        self.dobAge = nil
+        self.phoneNum = nil
     }
 }
 
@@ -59,8 +69,8 @@ struct User: Decodable, Identifiable {
 extension User {
     init(from entity: UserEntity) {
         self.id = entity.id ?? UUID().uuidString
-        self.gender = "" // Set default or optional, as Core Data doesn't have this data
-        self.name = Name(title: "", first: "", last: "")
+        self.gender = entity.gender ?? "" // Default or optional
+        self.name = Name(title: "", first: entity.nameFirst ?? "", last: "")
         self.location = Location(
             street: Street(number: 0, name: ""),
             city: "",
@@ -72,14 +82,20 @@ extension User {
         )
         self.email = "" // Default or optional
         self.login = Login(uuid: "", username: "", password: "", salt: "", md5: "", sha1: "", sha256: "")
-        self.dob = DateOfBirth(date: "", age: 0)
+        self.dob = DateOfBirth(date: "", age: Int(entity.dobAge))
         self.registered = Registered(date: "", age: 0)
-        self.phone = "" // Default or optional
+        self.phone = "" // From JSON data, not Core Data
         self.cell = "" // Default or optional
         self.idInfo = IDInfo(name: "", value: nil)
         self.picture = Picture(large: nil, medium: "", thumbnail: nil)
         self.nat = "" // Default or optional
+        
+        // Values from Core Data
         self.status = entity.status
+        self.pictureLarge = entity.pictureLarge
+        self.nameFirst = entity.nameFirst
+        self.dobAge = entity.dobAge
+        self.phone = entity.phoneNum
     }
 }
 
